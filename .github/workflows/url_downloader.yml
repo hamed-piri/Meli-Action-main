@@ -101,6 +101,8 @@ jobs:
             7z a -mx=3 -v${THRESH_MB}m "${ARCHIVE_BASE}.7z" "$BASENAME"
           fi
 
+          rm -f "$BASENAME"
+
           if [ -f "${ARCHIVE_BASE}.7z.001" ] && [ ! -f "${ARCHIVE_BASE}.7z.002" ]; then
             mv "${ARCHIVE_BASE}.7z.001" "${ARCHIVE_BASE}.7z"
           fi
